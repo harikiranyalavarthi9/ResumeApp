@@ -17,18 +17,20 @@ exports.tests = function(req, res) {
 
 exports.resume_create = function(req, res) {
     
-    
-    
-    let skillsBody = JSON.parse(JSON.stringify(req.body.skills));
-    skillsBody.working_knowledge = skillsBody.working_knowledge.split(/[\r\n,]+/);
-    skillsBody.basic_knowledge = skillsBody.basic_knowledge.split(/[\r\n,]+/);
-    skillsBody.ide = skillsBody.ide.split(/[\r\n,]+/);
+    // let workExperienceBody = JSON.parse(JSON.stringify(req.body.work_experience));
+    // for (let i=0; i < workExperienceBody.length; i++) {
+    //     workExperienceBody[i].responsibilities = workExperienceBody[i].responsibilities.split(/[\r\n]+/);
+    // }
+    // let skillsBody = JSON.parse(JSON.stringify(req.body.skills));
+    // skillsBody.working_knowledge = skillsBody.working_knowledge.split(/[\r\n,]+/);
+    // skillsBody.basic_knowledge = skillsBody.basic_knowledge.split(/[\r\n,]+/);
+    // skillsBody.ide = skillsBody.ide.split(/[\r\n,]+/);
 
-    let languagesBody = JSON.stringify(req.body.languages);
-    languagesBody = languagesBody.replace('["', '').replace('"]','').split(/[\r\n,]+/);
+    // let languagesBody = JSON.stringify(req.body.languages);
+    // languagesBody = languagesBody.replace('["', '').replace('"]','').split(/[\r\n,]+/);
 
-    let hobbiesBody = JSON.stringify(req.body.hobbies);
-    hobbiesBody = hobbiesBody.replace('["', '').replace('"]','').split(/[\r\n,]+/);
+    // let hobbiesBody = JSON.stringify(req.body.hobbies);
+    // hobbiesBody = hobbiesBody.replace('["', '').replace('"]','').split(/[\r\n,]+/);
 
     let resume = new Resume(
         {
@@ -41,10 +43,10 @@ exports.resume_create = function(req, res) {
             linkedInUrl: req.body.linkedin_url,
             githubUrl: req.body.github_url,
             workExperience: req.body.work_experience,
-            skills: skillsBody,
+            skills: req.body.skills,
             education: req.body.education,
-            languages: languagesBody,
-            hobbies: hobbiesBody
+            languages: req.body.languages,
+            hobbies: req.body.hobbies
         }
     );
 

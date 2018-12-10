@@ -2,89 +2,112 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <body>
-        <form method="post" action="resumes/create">
+        <form method="post" action="resumes/create_resume">
             <div class="container">
-                <h1>Resume</h1>
-                <hr>
-                <h2>Personal Information</h2>
-                <label for="first_name"><b>First Name</b></label>
-                <input type="text" placeholder="John" name="first_name" title="Enter String" value="John" required>
-                <br>
-                <label for="last_name"><b>Last Name</b></label>
-                <input type="text" placeholder="Doe" name="last_name" title="Enter String" value="Doe" required>
-                <br>
-                <label for="email"><b>Email</b></label>
-                <input type="email" placeholder="johndoe@example.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Include @"  value="johndoe@gmail.com" required>
-                <br>
-                <label for="phone"><b>Phone</b></label>
-                <input type="tel" placeholder="888-888-8888" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" title="10-digit phone number" value="999-999-9999" required>
-                <br>
-                <label for="city"><b>City</b></label>
-                <input type="text" placeholder="Denver" name="city" title="Enter String" value="Atlanta" required>
-                <br>
-                <label for="country_code"><b>Country Code</b></label>
-                <input type="text" placeholder="US" name="country_code" pattern="[A-Za-z]{2}" maxlength="2" title="Three letter country code" value="US" required>
-                <br>
-                <label for="linkedin_url"><b>LinkedIn URL</b></label>
-                <input type="url" placeholder="https://www.linkedin.com/in/johndoe" name="linkedin_url" pattern="https?://.+" title="Include http://" value="https://www.linkedin.com/in/johndoe">
-                <br>
-                <label for="github_url"><b>Github URL</b></label>
-                <input type="url" placeholder="https://www.github.com/johndoe" name="github_url" pattern="https?://.+" title="Include http://" value="https://www.github.com/johndoe">
-                <br>
-                <h2>Work Experience</h2>
-                <label for="from_date"><b>From Date</b></label>
-                <input type="datetime-local" name="work_experience[0][from_date]">
-                <br>
-                <label for="to_date"><b>To Date</b></label>
-                <input type="datetime-local" name="work_experience[0][to_date]">
-                <br>
-                <label for="responsibilities"><b>Responsibilities</b></label>
-                <textarea id="text_area" name="work_experience[0][responsibilities]" placeholder="Enter your job responsibilities" rows="15" cols="100" required>Sample</textarea>
-                <br>
-                <label for="description"><b>Description</b></label>
-                <input type="text" placeholder="Full Time" name="work_experience[0][description]" title="Enter String" value="Full Time" required>
-                <br>
-                <label for="title"><b>Title</b></label>
-                <input type="text" placeholder="Software Developer" name="work_experience[0][title]" title="Enter String" value="Software Developer" required>
-                <br>
-                <label for="company"><b>Company</b></label>
-                <input type="text" placeholder="Google" name="work_experience[0][company]" title="Enter String" value="Tricentis" required>
-                <br>
-                <h2>Skills</h2>
-                <label for="working_knowledge"><b>Working Knowledge</b></label>
-                <textarea id="text_area" name="skills[working_knowledge]" placeholder="Enter your working skills" rows="10" cols="50" required>HTML, CSS</textarea>
-                <br>
-                <label for="basic_knowledge"><b>Basic Knowledge</b></label>
-                <textarea id="text_area" name="skills[basic_knowledge]" placeholder="Enter your basic skills" rows="10" cols="50" required>JavaScript, Bootstrap</textarea>
-                <br>
-                <label for="ide"><b>IDE</b></label>
-                <textarea id="text_area" name="skills[ide]" placeholder="Enter your working ide's" rows="10" cols="50" required>Eclipse, Atom</textarea>
-                <br>
-                <h2>Education</h2>
-                <label for="establishment"><b>Establishment</b></label>
-                <input type="text" placeholder="Georgia State University" name="education[0][establishment]" title="Enter String" value="Georgia State University" required>
-                <br>
-                <label for="degree"><b>Degree</b></label>
-                <input type="text" placeholder="Master of Science" name="education[0][degree]" title="Enter String" value="Master of Science" required>
-                <br>
-                <label for="ed_city"><b>City</b></label>
-                <input type="text" placeholder="Atlanta" name="education[0][ed_city]" title="Enter String" value="San Jose" required>
-                <br>
-                <label for="ed_country_code"><b>Country Codes</b></label>
-                <input type="text" placeholder="IN" name="education[0][ed_country_code]" maxlength="2" title="Enter String" value="IN" required>
-                <br>
-                <label for="from_year"><b>From Year</b></label>
-                <input type="text" placeholder="2016" name="education[0][from_year]" maxlength="4" title="Enter Year" value=2016 required>
-                <br>
-                <label for="to_year"><b>To Year</b></label>
-                <input type="text" placeholder="2017" name="education[0][to_year]" maxlength="4" title="Enter Year" value=2017 required>
-                <br>
-                <label for="languages"><b>Languages</b></label>
-                <textarea id="text_area" name="languages[0]" placeholder="Enter your languages" rows="5" cols="50" required>English, Telugu</textarea>
-                <br>
-                <label for="hobbies"><b>Hobbies</b></label>
-                <textarea id="text_area" name="hobbies[0]" placeholder="Enter your hobbies" rows="5" cols="50" required>Kick Boxing, Traveling</textarea>
-                <br>
+                <h1>Job Application</h1>
+                <div>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <label for="first_name"><b>First Name</b></label>
+                        <input type="text" placeholder="John" name="first_name" title="Enter String" value="John" required>
+                        <br>
+                        <label for="last_name"><b>Last Name</b></label>
+                        <input type="text" placeholder="Doe" name="last_name" title="Enter String" value="Doe" required>
+                        <br>
+                        <label for="email"><b>Email</b></label>
+                        <input type="email" placeholder="johndoe@example.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Include @"  value="johndoe@gmail.com" required>
+                        <br>
+                        <label for="phone"><b>Phone</b></label>
+                        <input type="tel" placeholder="888-888-8888" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" title="10-digit phone number" value="999-999-9999" required>
+                        <br>
+                        <label for="city"><b>City</b></label>
+                        <input type="text" placeholder="Denver" name="city" title="Enter String" value="Atlanta" required>
+                        <br>
+                        <label for="country_code"><b>Country Code</b></label>
+                        <input type="text" placeholder="US" name="country_code" pattern="[A-Za-z]{2}" maxlength="2" title="Three letter country code" value="US" required>
+                        <br>
+                        <label for="linkedin_url"><b>LinkedIn URL</b></label>
+                        <input type="url" placeholder="https://www.linkedin.com/in/johndoe" name="linkedin_url" pattern="https?://.+" title="Include http://" value="https://www.linkedin.com/in/johndoe">
+                        <br>
+                        <label for="github_url"><b>Github URL</b></label>
+                        <input type="url" placeholder="https://www.github.com/johndoe" name="github_url" pattern="https?://.+" title="Include http://" value="https://www.github.com/johndoe">
+                        <br>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Work Experience</legend>
+                        <label for="from_date"><b>From Date</b></label>
+                        <input type="datetime-local" name="work_experience[0][from_date]">
+                        <br>
+                        <label for="to_date"><b>To Date</b></label>
+                        <input type="datetime-local" name="work_experience[0][to_date]">
+                        <br>
+                        <label for="responsibilities"><b>Responsibilities</b></label>
+                        <textarea id="text_area" name="work_experience[0][responsibilities]" placeholder="Enter your job responsibilities" rows="15" cols="100" required>Sample</textarea>
+                        <br>
+                        <label for="description"><b>Description</b></label>
+                        <input type="text" placeholder="Full Time" name="work_experience[0][description]" title="Enter String" value="Full Time" required>
+                        <br>
+                        <label for="title"><b>Title</b></label>
+                        <input type="text" placeholder="Software Developer" name="work_experience[0][title]" title="Enter String" value="Software Developer" required>
+                        <br>
+                        <label for="company"><b>Company</b></label>
+                        <input type="text" placeholder="Google" name="work_experience[0][company]" title="Enter String" value="Tricentis" required>
+                        <br>
+                        <button onclick="addExperience()">Add Experience</button>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Skills</legend>
+                        <label for="working_knowledge"><b>Working Knowledge</b></label>
+                        <textarea id="text_area" name="skills[working_knowledge]" placeholder="Enter your working skills" rows="10" cols="50" required>HTML, CSS</textarea>
+                        <br>
+                        <label for="basic_knowledge"><b>Basic Knowledge</b></label>
+                        <textarea id="text_area" name="skills[basic_knowledge]" placeholder="Enter your basic skills" rows="10" cols="50" required>JavaScript, Bootstrap</textarea>
+                        <br>
+                        <label for="ide"><b>IDE</b></label>
+                        <textarea id="text_area" name="skills[ide]" placeholder="Enter your working ide's" rows="10" cols="50" required>Eclipse, Atom</textarea>
+                        <br>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Education</legend>
+                        <label for="establishment"><b>Establishment</b></label>
+                        <input type="text" placeholder="Georgia State University" name="education[0][establishment]" title="Enter String" value="Georgia State University" required>
+                        <br>
+                        <label for="degree"><b>Degree</b></label>
+                        <input type="text" placeholder="Master of Science" name="education[0][degree]" title="Enter String" value="Master of Science" required>
+                        <br>
+                        <label for="ed_city"><b>City</b></label>
+                        <input type="text" placeholder="Atlanta" name="education[0][ed_city]" title="Enter String" value="San Jose" required>
+                        <br>
+                        <label for="ed_country_code"><b>Country Codes</b></label>
+                        <input type="text" placeholder="IN" name="education[0][ed_country_code]" maxlength="2" title="Enter String" value="IN" required>
+                        <br>
+                        <label for="from_year"><b>From Year</b></label>
+                        <input type="text" placeholder="2016" name="education[0][from_year]" maxlength="4" title="Enter Year" value=2016 required>
+                        <br>
+                        <label for="to_year"><b>To Year</b></label>
+                        <input type="text" placeholder="2017" name="education[0][to_year]" maxlength="4" title="Enter Year" value=2017 required>
+                        <br>
+                        <button onclick="myFunction()">Add Education</button>
+                        <br>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Interests</legend>
+                        <label for="languages"><b>Languages</b></label>
+                        <textarea id="text_area" name="languages[0]" placeholder="Enter your languages" rows="5" cols="50" required>English, Telugu</textarea>
+                        <br>
+                        <label for="hobbies"><b>Hobbies</b></label>
+                        <textarea id="text_area" name="hobbies[0]" placeholder="Enter your hobbies" rows="5" cols="50" required>Kick Boxing, Traveling</textarea>
+                        <br>
+                    </fieldset>
+                </div>
                 <button type="submit">Submit</button>
             </div>
         </form>

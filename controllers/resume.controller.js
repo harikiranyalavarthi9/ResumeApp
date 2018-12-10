@@ -18,6 +18,17 @@ exports.tests = function(req, res) {
 exports.resume_create = function(req, res) {
     
     
+    
+    let skillsBody = JSON.parse(JSON.stringify(req.body.skills));
+    skillsBody.working_knowledge = skillsBody.working_knowledge.split(/[\r\n,]+/);
+    skillsBody.basic_knowledge = skillsBody.basic_knowledge.split(/[\r\n,]+/);
+    skillsBody.ide = skillsBody.ide.split(/[\r\n,]+/);
+
+    let languagesBody = JSON.stringify(req.body.languages);
+    languagesBody = languagesBody.replace('["', '').replace('"]','').split(/[\r\n,]+/);
+
+    let hobbiesBody = JSON.stringify(req.body.hobbies);
+    hobbiesBody = hobbiesBody.replace('["', '').replace('"]','').split(/[\r\n,]+/);
 
     let resume = new Resume(
         {
@@ -30,10 +41,10 @@ exports.resume_create = function(req, res) {
             linkedInUrl: req.body.linkedin_url,
             githubUrl: req.body.github_url,
             workExperience: req.body.work_experience,
-            skills: req.body.skills,
+            skills: skillsBody,
             education: req.body.education,
-            languages: req.body.languages,
-            hobbies: req.body.hobbies
+            languages: languagesBody,
+            hobbies: hobbiesBody
         }
     );
 

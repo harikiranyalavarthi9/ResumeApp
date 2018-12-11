@@ -34,7 +34,7 @@
                         <br>
                     </fieldset>
                 </div>
-                <div>
+                <div class="experience">
                     <fieldset>
                         <legend>Work Experience</legend>
                         <label for="from_date"><b>From Date</b></label>
@@ -55,7 +55,7 @@
                         <label for="company"><b>Company</b></label>
                         <input type="text" placeholder="Google" name="work_experience[0][company]" title="Enter String" value="Tricentis" required>
                         <br>
-                        <button onclick="addExperience()">Add Experience</button>
+                        <button type="button" class="btn-exp">Add Experience</button>
                     </fieldset>
                 </div>
                 <div>
@@ -111,5 +111,16 @@
                 <button type="submit">Submit</button>
             </div>
         </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function () {
+            let counter = 0;
+            $('.btn-exp').on("click", function() {
+                counter++;
+                let txt1 = "<fieldset><legend>Work Experience</legend><label for='from_date'><b>From Date</b></label><input type='datetime-local' name='work_experience['+counter'+][from_date]'><br>";    
+                $(".experience").after(txt1);
+            });
+        });
+        </script>
     </body>
 </html>

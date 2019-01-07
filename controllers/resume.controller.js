@@ -31,7 +31,6 @@ exports.resume_create = function(req, res) {
 
     // let hobbiesBody = JSON.stringify(req.body.hobbies);
     // hobbiesBody = hobbiesBody.replace('["', '').replace('"]','').split(/[\r\n,]+/);
-
     let resume = new Resume(
         {
             firstName: req.body.first_name,
@@ -46,7 +45,8 @@ exports.resume_create = function(req, res) {
             skills: req.body.skills,
             education: req.body.education,
             languages: req.body.languages,
-            hobbies: req.body.hobbies
+            hobbies: req.body.hobbies,
+            resumeFiles: req.file.path
         }
     );
 

@@ -1,5 +1,5 @@
 'use strict';
-
+// use "gulp browser-sync" command in the terminal to run the app
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');

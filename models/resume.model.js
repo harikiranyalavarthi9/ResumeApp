@@ -18,6 +18,7 @@ let ResumeSchema = new Schema({
         title: {type: String, required: true},
         company: {type: String, required: true}
     }],
+    resumeFiles: { type: String, required: true},
     skills: {
         // workingKnowledge: [{type: String, required: true}],
         // basicKnowledge: [{type: String, required: true}],
